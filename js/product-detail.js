@@ -380,7 +380,7 @@ function renderSpecTables(p, pr) {
           <tr><td class="spec-key">Manufacturer Warranty</td><td class="spec-val"><strong>${p.warranty || '5 Years Comprehensive on PCB/Coils/Motors + 10 Years on Inverter Compressor'}</strong></td></tr>
           <tr><td class="spec-key">Installation &amp; Commissioning</td><td class="spec-val">${p.installation_details || 'Standard Installation ₹1,500 by Authorized VACS Technicians'}</td></tr>
           <tr><td class="spec-key">Authorized Dealer &amp; Service Partner</td><td class="spec-val"><strong>Versatile Air Conditioner Systems (CH. SANTHOSH)</strong> — KPHB 4th Phase, Hyderabad</td></tr>
-          <tr><td class="spec-key">Direct Support Helpline</td><td class="spec-val"><a href="tel:+919700063938" style="color:#0284c7; font-weight:600;">+91 97000 63938</a> / <a href="tel:+917386383906" style="color:#0284c7; font-weight:600;">+91 73863 83906</a> / <a href="tel:04035983806" style="color:#0284c7; font-weight:600;">040-35983806</a></td></tr>
+          <tr><td class="spec-key">Direct Support Helpline</td><td class="spec-val"><a href="tel:+919700063938" style="color:#0284c7; font-weight:600;">+91 97000 63938</a> / <a href="tel:+919010424305" style="color:#0284c7; font-weight:600;">+91 90104 24305</a></td></tr>
         </tbody>
       </table>
     </div>

@@ -6,8 +6,8 @@
 const VACS_CONFIG = {
   businessName: 'Versatile Air Conditioner Systems',
   proprietor: 'CH. SANTHOSH',
-  phones: ['9700063938', '7386383906'],
-  landline: '040-35983806',
+  phones: ['9700063938', '9010424305'],
+  landline: '',
   email: 'versatileairconditioners@gmail.com',
   address: 'LIG.30/9, KPHB, 4th Phase, Beside Foot Over Bridge, Kukatpally, Hyderabad, Telangana - 500072',
   whatsappPhone: '919700063938'
