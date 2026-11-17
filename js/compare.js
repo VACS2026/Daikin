@@ -100,6 +100,8 @@ class ProductComparator {
 
     if (!bar) return;
 
+    document.body.classList.toggle('compare-bar-open', this.selectedIds.length > 0);
+
     if (this.selectedIds.length > 0) {
       bar.classList.add('active');
     } else {

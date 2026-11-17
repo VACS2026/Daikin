@@ -461,8 +461,6 @@ p:last-child {
   width: 34px;
   flex-shrink: 0;
 }
-  line-height: 1;
-}
 
 /* Mobile Nav Drawer Overlay */
 .mobile-nav-backdrop {
@@ -2146,20 +2144,106 @@ p:last-child {
   color: #ffffff;
 }
 
+/* Banner: show full image (text is baked in), controls in a clean bar below */
+.pano-bg-img {
+  height: auto;
+  aspect-ratio: 1920 / 610;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pano-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 1rem;
+  background-color: #0b1624;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pano-control-bar .pano-switcher {
+  position: static;
+}
+
+.pano-quick-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pano-dot { white-space: nowrap; }
+
 @media (max-width: 860px) {
-  .pano-bg-img {
-    height: 240px;
-    object-position: right center;
+  .pano-control-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem;
+    gap: 0.6rem;
   }
-  .pano-overlay-content {
-    position: relative;
+  .pano-control-bar .pano-switcher {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+  .pano-dot {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.4rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pano-quick-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+  .pano-btn-primary, .pano-btn-glass {
+    justify-content: center;
     width: 100%;
-    padding: 1.25rem;
-    background: #0b1624;
+    min-height: 40px;
   }
-  .pano-switcher {
-    top: 0.65rem;
-    bottom: auto;
-    right: 0.65rem;
+}
+
+/* ==========================================================================
+   MOBILE HEADER: PERFECT FIT (320px – 640px)
+   ========================================================================== */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+@media (max-width: 640px) {
+  .site-topbar { display: none; }
+  .container { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .header-content { height: 56px; gap: 0.5rem; }
+  .brand-lockup { gap: 0.45rem; min-width: 0; flex: 1 1 auto; flex-shrink: 1; }
+  .brand-text-group { min-width: 0; }
+  .daikin-official-logo { height: 16px; }
+  .brand-divider { height: 20px; }
+  .brand-title {
+    font-size: 0.66rem;
+    letter-spacing: 0;
+    line-height: 1.2;
+    white-space: normal !important;
+    max-width: 140px;
   }
+  .main-nav { top: 56px; }
+  .mobile-menu-btn { width: 38px; height: 38px; }
+  .hero-section { padding-top: 1rem !important; }
+  .home-panoramic-banner { border-radius: 10px; margin-bottom: 1.25rem; }
+  .hero-actions .btn { flex: 1 1 100%; }
+}
+
+/* Compare bar vs floating dock: never overlap */
+body.compare-bar-open .vacs-floating-dock { bottom: 6.5rem; }
+
+@media (max-width: 480px) {
+  body.compare-bar-open .vacs-floating-dock { display: none; }
+  .compare-bar-content > div:last-child {
+    display: grid !important;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 0.5rem;
+  }
+  .compare-bar-content > div:last-child .btn { width: 100%; }
+  .compare-bar-content > div:first-child { flex-wrap: wrap; }
 }
