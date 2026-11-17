@@ -1,0 +1,65 @@
+[
+  {
+    "id": "basic-amc",
+    "name": "Standard Care AMC",
+    "tier": "Non-Comprehensive",
+    "recommended_for": "Residential ACs within 1 to 4 years old",
+    "price_split_1_to_1_5": "₹1,499 / Year",
+    "price_split_2_ton": "₹1,899 / Year",
+    "price_cassette": "₹2,799 / Year",
+    "features": [
+      "2 Scheduled High-Pressure Jet Pump Wet Services / Year",
+      "Unlimited Emergency Breakdown Visits (Zero Labor Charge)",
+      "Comprehensive Electrical & Wiring Check",
+      "Refrigerant Operating Pressure Check",
+      "Indoor Blower & Condenser Coil Chemical Descaling",
+      "Drain Pipe Cleaning & De-clogging",
+      "Response Time: Within 4 to 6 Hours in Hyderabad"
+    ],
+    "exclusions": [
+      "Cost of replacement spare parts (PCB, capacitor, motor)",
+      "Refrigerant gas top-up or refilling charges"
+    ]
+  },
+  {
+    "id": "comprehensive-amc",
+    "name": "Total Peace-of-Mind AMC",
+    "tier": "Comprehensive Protection",
+    "recommended_for": "Complete risk-free coverage for homes, offices & commercial setups",
+    "price_split_1_to_1_5": "₹3,499 / Year",
+    "price_split_2_ton": "₹3,999 / Year",
+    "price_cassette": "₹5,499 / Year",
+    "is_popular": true,
+    "features": [
+      "3 Scheduled High-Pressure Jet Pump Wet Services / Year",
+      "Unlimited Emergency Breakdown Visits with Priority Dispatch",
+      "100% Free Replacement of Functional Electrical Spares (PCB, Fan Motor, Capacitor, Sensor)",
+      "1 Free Gas Charging / Leak Rectification (if required)",
+      "Indoor & Outdoor Coil Acid/Chemical Cleansing",
+      "Thermostat & Remote Controller Verification",
+      "Guaranteed Response Time: Within 2 to 4 Hours in Hyderabad"
+    ],
+    "exclusions": [
+      "Physical cabinet damage, aesthetic plastic breakages, or copper coil external punctures"
+    ]
+  },
+  {
+    "id": "commercial-amc",
+    "name": "Enterprise & VRV AMC",
+    "tier": "Commercial HVAC Custom Contract",
+    "recommended_for": "Cassette, Ductable & VRV systems in corporate offices, hospitals & retail stores",
+    "price_custom": "Custom Quote Based on Site Tonnage",
+    "features": [
+      "Monthly Routine Preventative Inspection Visits",
+      "Quarterly High-Pressure Deep Wet Washing for All Indoor & Outdoor Units",
+      "Complete Inverter Electronics & BMS Diagnostics",
+      "Airflow Balancing & Duct Grill Static Pressure Tuning",
+      "Dedicated Assigned Lead HVAC Technician",
+      "Detailed Maintenance Log & Health Certification",
+      "24/7 Emergency Support Hotline"
+    ],
+    "exclusions": [
+      "Civil/masonry alterations and external power feeder cables"
+    ]
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "split-ac",
+    "name": "Split Air Conditioners",
+    "tagline": "Whisper-quiet, high ISEER inverter cooling for homes & modern living",
+    "icon": "split",
+    "subcategories": [
+      {
+        "id": "inverter-5-star",
+        "name": "Inverter 5 Star",
+        "series": ["FTKM Premium", "FTKU Standard", "JTKJ Waizu (Streamer)", "FTKR Wi-Fi/Voice", "FTKF Highest ISEER"],
+        "description": "Ultra energy-efficient models with ISEER ratings up to 5.7 and PM 2.5 filtration."
+      },
+      {
+        "id": "inverter-4-star",
+        "name": "Inverter 4 Star",
+        "series": ["FTXF Hot & Cold"],
+        "description": "All-season dual cooling and heating inverter systems."
+      },
+      {
+        "id": "inverter-3-star",
+        "name": "Inverter 3 Star",
+        "series": ["FTKL Standard", "FTKC Entry", "FTKN Wi-Fi", "FTHT Hot & Cold"],
+        "description": "High value-for-money split ACs with robust copper condensers and balanced power saving."
+      },
+      {
+        "id": "non-inverter",
+        "name": "Non-Inverter Fixed Speed",
+        "series": ["FTQ (2 Star)", "FTL (3 Star)", "FTE (1 Star)"],
+        "description": "Reliable heavy-duty fixed speed split ACs for budget installations."
+      }
+    ]
+  },
+  {
+    "id": "cassette-ac",
+    "name": "Cassette Air Conditioners",
+    "tagline": "360° uniform ceiling airflow for luxury residences, offices & showrooms",
+    "icon": "cassette",
+    "subcategories": [
+      {
+        "id": "cassette-4way-inverter",
+        "name": "4-Way Inverter (3, 4 & 5 Star)",
+        "series": ["FCVFQ Series", "FCMF 5-Star Series"],
+        "description": "True 360-degree round flow panel with independent flap control and built-in condensate drain pump."
+      },
+      {
+        "id": "cassette-1way-inverter",
+        "name": "1-Way Inverter",
+        "series": ["FKCAQ Series"],
+        "description": "Slimline directional cassette ideal for narrow false ceiling corridors and bedroom perimeters."
+      },
+      {
+        "id": "cassette-non-inverter",
+        "name": "4-Way Non-Inverter (2 Star)",
+        "series": ["FCQF Series"],
+        "description": "High tonnage commercial false-ceiling cooling for retail outlets and corporate spaces."
+      }
+    ]
+  },
+  {
+    "id": "vrv-systems",
+    "name": "VRV Multi-Split Systems",
+    "tagline": "Next-generation multi-zone centralized climate control for villas & buildings",
+    "icon": "vrv",
+    "subcategories": [
+      {
+        "id": "vrv-home",
+        "name": "VRV Home",
+        "series": ["4 HP, 5 HP, 6 HP Outdoor Units"],
+        "description": "Single outdoor trunk powering up to 8 indoor units with independent zone control."
+      },
+      {
+        "id": "vrv-s-commercial",
+        "name": "VRV-S & VRV-X",
+        "series": ["VRV-S Side Discharge", "VRV-X Top Discharge"],
+        "description": "Modular high-capacity VRF systems for commercial complexes, hospitals, and office towers."
+      }
+    ]
+  },
+  {
+    "id": "ductable-ac",
+    "name": "Ductable Air Conditioners",
+    "tagline": "Concealed heavy-static ducted solutions for large commercial & residential floors",
+    "icon": "duct",
+    "subcategories": [
+      {
+        "id": "ductable-inverter",
+        "name": "Inverter Ductable",
+        "series": ["FDMFQ Series", "FD-KR High Static Series"],
+        "description": "Energy-efficient concealed ducted cooling with variable static pressure capabilities."
+      },
+      {
+        "id": "ductable-non-inverter",
+        "name": "Non-Inverter Ductable",
+        "series": ["FDMF Series", "FDR-FRV High Static Series"],
+        "description": "Heavy industrial and retail ducted packages up to 16.5 Ton."
+      }
+    ]
+  },
+  {
+    "id": "air-purifiers",
+    "name": "Daikin Air Purifiers",
+    "tagline": "Patented Streamer Discharge technology to neutralize airborne viruses and PM2.5",
+    "icon": "purifier",
+    "subcategories": [
+      {
+        "id": "streamer-purifiers",
+        "name": "Streamer Air Purifier Series",
+        "series": ["MC40XVM6", "MC55XVM6"],
+        "description": "Electrostatic HEPA filtration with lifetime 10-year filter performance."
+      }
+    ]
+  }
+]
