@@ -69,17 +69,19 @@ for hf in html_files:
     # Check script references
     scripts = re.findall(r'<script[^>]+src=[\'"]([^\'"]+)[\'"]', content)
     for s in scripts:
-        s_path = s.replace('/', os.sep)
+        clean_s = s.split('?')[0]
+        s_path = clean_s.replace('/', os.sep)
         if not os.path.exists(s_path):
             print(f"[FAIL] In {hf}, missing script: {s}")
 
-    if 'data/pricing-config.js' not in scripts:
+    if not any('data/pricing-config.js' in s for s in scripts):
         print(f"[WARN] In {hf}, data/pricing-config.js not included!")
 
     # Check stylesheet references
-    css = re.findall(r'<link[^>]+href=[\'"]([^\'"]+\.css)[\'"]', content)
+    css = re.findall(r'<link[^>]+href=[\'"]([^\'"]+\.css(?:\?[^\'"]*)?)[\'"]', content)
     for c in css:
-        c_path = c.replace('/', os.sep)
+        clean_c = c.split('?')[0]
+        c_path = clean_c.replace('/', os.sep)
         if not os.path.exists(c_path):
             print(f"[FAIL] In {hf}, missing css: {c}")
 
