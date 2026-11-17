@@ -120,22 +120,22 @@ window.VACS_PRICING_CONFIG = {
     "jet-wash": {
       name: "Foam & High-Pressure Jet Wet Servicing",
       unit: "per Split AC",
-      mrp: 799,
-      sellingPrice: 499,
+      mrp: 1500,
+      sellingPrice: 1000,
       note: "2+ ACs Combo: ₹449/AC"
     },
     "gas-refill": {
       name: "Complete R-32 / R-410A Gas Charging",
       unit: "Full Refill + Leak Test",
-      mrp: 2800,
-      sellingPrice: 2199,
+      mrp: 4500,
+      sellingPrice: 3500,
       note: "Includes Nitrogen Test & Vacuuming"
     },
     "pcb-repair": {
       name: "Inverter PCB Diagnostics & Inspection",
       unit: "Doorstep Visit",
-      mrp: 499,
-      sellingPrice: 299,
+      mrp: 4000,
+      sellingPrice: 3500,
       note: "Adjusted 100% if repair approved"
     },
     "installation": {
@@ -143,7 +143,7 @@ window.VACS_PRICING_CONFIG = {
       unit: "Authorized Setup",
       mrp: 1800,
       sellingPrice: 1500,
-      note: "Outdoor L-Stand ₹750 extra"
+      note: "Outdoor L-Stand ₹850 extra"
     }
   },
 

@@ -116,4 +116,4 @@ You can also update `serviceRates` (Jet Wash, Gas Refill, Installation) and `amc
 * **Showroom**: LIG.30/9, KPHB, 4th Phase, Beside Foot Over Bridge, Kukatpally, Hyderabad, Telangana - 500072
 * **Mobile**: `+91 97000 63938` / `+91 73863 83906`
 * **Landline**: ``
-* **Email**: `versatileairconditioners@gmail.com`
+* **Email**: `info@versatileairconditioners.com`
