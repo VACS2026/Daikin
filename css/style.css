@@ -219,7 +219,7 @@ p:last-child {
   border-bottom: 1px solid var(--color-slate-200);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
 }
 
@@ -462,21 +462,22 @@ p:last-child {
   flex-shrink: 0;
 }
 
-/* Mobile Nav Drawer Overlay */
+/* Mobile Nav Drawer Overlay (Sits behind header and drawer, no blur) */
 .mobile-nav-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(3px);
-  z-index: 150;
+  background-color: rgba(15, 23, 42, 0.45);
+  z-index: 990;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition);
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .mobile-nav-backdrop.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -1383,19 +1384,19 @@ p:last-child {
     flex-direction: column;
     align-items: stretch;
     position: fixed;
-    top: 64px;
+    top: 58px;
     left: 0;
     right: 0;
     bottom: 0;
-    height: auto;
+    height: calc(100vh - 58px);
     background-color: #ffffff;
     padding: 1.25rem 1.5rem 2.5rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    z-index: 160;
+    z-index: 1005;
     transform: translateX(-100%);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: var(--shadow-modal);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     margin-left: 0;
     gap: 0.35rem;
   }
@@ -2227,7 +2228,10 @@ html, body { max-width: 100%; overflow-x: hidden; }
     white-space: normal !important;
     max-width: 140px;
   }
-  .main-nav { top: 56px; }
+  .main-nav {
+    top: 56px;
+    height: calc(100vh - 56px);
+  }
   .mobile-menu-btn { width: 38px; height: 38px; }
   .hero-section { padding-top: 1rem !important; }
   .home-panoramic-banner { border-radius: 10px; margin-bottom: 1.25rem; }

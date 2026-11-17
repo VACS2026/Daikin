@@ -40,15 +40,19 @@ function initMobileNav() {
   const openDrawer = () => {
     mainNav.classList.add('mobile-active');
     backdrop.classList.add('active');
+    toggleBtn.classList.add('active');
     document.body.style.overflow = 'hidden';
     toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.innerHTML = '<svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
   };
 
   const closeDrawer = () => {
     mainNav.classList.remove('mobile-active');
     backdrop.classList.remove('active');
+    toggleBtn.classList.remove('active');
     document.body.style.overflow = '';
     toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.innerHTML = '<svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 9.5h16M4 14h16M4 18.5h16"></path></svg>';
   };
 
   toggleBtn.addEventListener('click', (e) => {
