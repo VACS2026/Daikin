@@ -51,16 +51,78 @@ function getPriceObj(p) {
 function renderProductDetail(p, allProducts) {
   const pr = getPriceObj(p);
 
-  // Update document title
-  document.title = `${p.model} (${pr.sellingFormatted} | ${pr.discountPercent}% OFF) Daikin ${p.tonnage} ${p.star_rating} AC in Hyderabad - VACS`;
+  // Update document title, meta description, canonical URL & dynamic Product JSON-LD Schema for SEO
+  document.title = `Daikin ${p.model} ${p.tonnage} ${p.star_rating} ${p.category} Price in Hyderabad (${pr.sellingFormatted} | ${pr.discountPercent}% OFF) | VACS`;
+
+  const cleanUrl = `https://versatileairconditioners.com/product?id=${encodeURIComponent(p.id)}`;
+  const seoDesc = `Buy Daikin ${p.model} (${p.series}) ${p.tonnage} ${p.star_rating} ${p.category} in Hyderabad at ${pr.sellingFormatted} (MRP ${pr.mrpFormatted}, Save ${pr.savingsFormatted} / ${pr.discountPercent}% OFF). ${p.iseer ? 'ISEER ' + p.iseer + ', ' : ''}100% Copper, ${p.warranty || '1+5+10 Yrs Warranty'}. Authorized Showroom: Versatile Air Conditioner Systems, Kukatpally.`;
+
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', seoDesc);
+
+  let canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (!canonicalLink) {
+    canonicalLink = document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonicalLink);
+  }
+  canonicalLink.setAttribute('href', cleanUrl);
+
+  let schemaScript = document.getElementById('dynamicProductSchema');
+  if (!schemaScript) {
+    schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.id = 'dynamicProductSchema';
+    document.head.appendChild(schemaScript);
+  }
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": p.title || `Daikin ${p.model} ${p.tonnage} ${p.star_rating} ${p.category}`,
+        "sku": p.model,
+        "mpn": p.model,
+        "brand": { "@type": "Brand", "name": "Daikin" },
+        "category": p.category,
+        "image": `https://versatileairconditioners.com/${p.image || 'assets/images/FTKM_Series.jpg'}`,
+        "description": seoDesc,
+        "offers": {
+          "@type": "Offer",
+          "url": cleanUrl,
+          "priceCurrency": "INR",
+          "price": String(pr.sellingPrice),
+          "priceValidUntil": "2027-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "HVACBusiness",
+            "name": "Versatile Air Conditioner Systems",
+            "telephone": "+919700063938",
+            "address": "LIG.30/9, KPHB 4th Phase, Kukatpally, Hyderabad - 500072"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://versatileairconditioners.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Daikin AC Catalog", "item": "https://versatileairconditioners.com/products" },
+          { "@type": "ListItem", "position": 3, "name": p.category, "item": `https://versatileairconditioners.com/products?category=${encodeURIComponent(p.category)}` },
+          { "@type": "ListItem", "position": 4, "name": p.model, "item": cleanUrl }
+        ]
+      }
+    ]
+  };
+  schemaScript.textContent = JSON.stringify(productSchema);
 
   // Breadcrumbs
   const bcEl = document.getElementById('productBreadcrumb');
   if (bcEl) {
     bcEl.innerHTML = `
-      <a href="index.html">Home</a> &nbsp;/&nbsp;
-      <a href="products.html">Catalog</a> &nbsp;/&nbsp;
-      <a href="products.html?category=${encodeURIComponent(p.category)}">${p.category}</a> &nbsp;/&nbsp;
+      <a href="/">Home</a> &nbsp;/&nbsp;
+      <a href="products">Catalog</a> &nbsp;/&nbsp;
+      <a href="products?category=${encodeURIComponent(p.category)}">${p.category}</a> &nbsp;/&nbsp;
       <span style="color: #0f172a; font-weight: 600;">${p.model}</span>
     `;
   }
@@ -403,11 +465,11 @@ function renderRelatedModels(currentProduct, allProducts) {
           <span class="badge ${p.is_inverter ? 'badge-inverter' : 'badge-mrp'}">${p.star_rating}</span>
           <span class="price-discount-pill">${pr.discountPercent}% OFF</span>
         </div>
-        <a href="product.html?id=${p.id}" class="product-image-wrapper" style="height: 115px;">
+        <a href="product?id=${p.id}" class="product-image-wrapper" style="height: 115px;">
           <img src="${p.image || 'assets/images/FTKM_Series.jpg'}" alt="${p.model}">
         </a>
         <div class="product-series">${p.series}</div>
-        <h4 style="font-size: 0.9375rem; font-weight: 700; margin-bottom: 0.15rem;"><a href="product.html?id=${p.id}">${p.model}</a></h4>
+        <h4 style="font-size: 0.9375rem; font-weight: 700; margin-bottom: 0.15rem;"><a href="product?id=${p.id}">${p.model}</a></h4>
         <div style="font-size: 0.72rem; color: #64748b; margin-bottom: 0.5rem;">${p.tonnage} • ${p.room_size || '120–180 sq.ft'}</div>
         <div class="ecart-price-block" style="padding: 0.5rem 0.65rem; margin-bottom: 0.5rem;">
           <div class="ecart-price-row">
@@ -416,7 +478,7 @@ function renderRelatedModels(currentProduct, allProducts) {
           </div>
           <div style="font-size: 0.68rem; color: #059669; font-weight: 600;">Save ${pr.savingsFormatted}</div>
         </div>
-        <a href="product.html?id=${p.id}" class="btn btn-outline btn-sm" style="width: 100%;">View Offer & Specs</a>
+        <a href="product?id=${p.id}" class="btn btn-outline btn-sm" style="width: 100%;">View Offer & Specs</a>
       </div>
     `;
   }).join('');

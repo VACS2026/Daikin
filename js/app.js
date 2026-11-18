@@ -13,6 +13,18 @@ const VACS_CONFIG = {
   whatsappPhone: '919700063938'
 };
 
+// Normalize browser URL bar: strip /index.html -> / and *.html -> clean path on live http/https
+(function cleanBrowserUrl() {
+  if (window.location.protocol !== 'http:' && window.location.protocol !== 'https:') return;
+  const path = window.location.pathname;
+  if (path === '/index.html' || path === '/index') {
+    window.history.replaceState(null, '', '/' + window.location.search + window.location.hash);
+  } else if (path.endsWith('.html')) {
+    const cleanPath = path.slice(0, -5) || '/';
+    window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initFloatingQuickContact();

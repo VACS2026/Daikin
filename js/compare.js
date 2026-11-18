@@ -169,7 +169,7 @@ class ProductComparator {
                     <span class="price-mrp-strike" style="font-size: 0.75rem;">${pr.mrpFormatted}</span>
                   </div>
                   <div style="margin-top: 3px;"><span class="price-discount-pill">Save ${pr.savingsFormatted} (${pr.discountPercent}% OFF)</span></div>
-                  <a href="product.html?id=${p.id}" class="btn btn-outline btn-sm" style="margin-top: 0.45rem; display: inline-block;">View Details</a>
+                  <a href="product?id=${p.id}" class="btn btn-outline btn-sm" style="margin-top: 0.45rem; display: inline-block;">View Details</a>
                 </th>
               `;
               }).join('')}

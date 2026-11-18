@@ -2251,3 +2251,97 @@ body.compare-bar-open .vacs-floating-dock { bottom: 6.5rem; }
   .compare-bar-content > div:last-child .btn { width: 100%; }
   .compare-bar-content > div:first-child { flex-wrap: wrap; }
 }
+
+/* ==========================================================================
+   SEO FAQ ACCORDION & LOCAL AREA COVERAGE SECTION
+   ========================================================================== */
+.seo-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.seo-faq-item {
+  background-color: #ffffff;
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition);
+}
+
+.seo-faq-item[open] {
+  border-color: var(--color-primary-border);
+  background-color: #fcfdff;
+}
+
+.seo-faq-item summary {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-slate-900);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1.4;
+}
+
+.seo-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.seo-faq-item summary::after {
+  content: "+";
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.seo-faq-item[open] summary::after {
+  content: "−";
+}
+
+.seo-faq-body {
+  font-size: 0.8125rem;
+  color: var(--color-slate-600);
+  line-height: 1.6;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--color-slate-100);
+}
+
+.seo-area-box {
+  background-color: #ffffff;
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.seo-area-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+}
+
+.seo-area-pill {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-slate-700);
+  background-color: var(--color-slate-50);
+  border: 1px solid var(--color-slate-200);
+  padding: 0.22rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 640px) {
+  .seo-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}

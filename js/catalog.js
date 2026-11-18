@@ -499,7 +499,7 @@ class ProductCatalog {
           </label>
         </div>
 
-        <a href="product.html?id=${p.id}" class="product-image-wrapper" style="display: flex;">
+        <a href="product?id=${p.id}" class="product-image-wrapper" style="display: flex;">
           <img src="${p.image || 'assets/images/FTKM_Series.jpg'}" alt="${p.title}" loading="lazy">
         </a>
 
@@ -509,7 +509,7 @@ class ProductCatalog {
         </div>
 
         <div class="product-series">${p.series || p.category} • ${pr.tag}</div>
-        <h3 class="product-model"><a href="product.html?id=${p.id}">${p.model}</a></h3>
+        <h3 class="product-model"><a href="product?id=${p.id}">${p.model}</a></h3>
         <p class="product-desc">${p.title}</p>
 
         <div class="product-spec-pills">
@@ -535,7 +535,7 @@ class ProductCatalog {
         </div>
 
         <div class="product-card-actions">
-          <a href="product.html?id=${p.id}" class="btn btn-outline btn-sm">View Details</a>
+          <a href="product?id=${p.id}" class="btn btn-outline btn-sm">View Details</a>
           <button class="btn btn-primary btn-sm" data-wa-action="quote" data-model="${p.model}" data-offer-price="${pr.sellingFormatted}" data-mrp-price="${pr.mrpFormatted}">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width: 13px; height: 13px;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.802-.413-1.424-.595-2.348-2.029-2.42-2.123-.072-.095-.572-.76-.572-1.448s.361-1.026.49-1.168c.129-.142.28-.179.375-.179.094 0 .189.001.272.006.088.006.205-.034.321.246.12.29.414 1.008.45 1.082.036.074.06.16.012.256-.048.096-.073.156-.145.241-.072.085-.153.19-.219.255-.073.072-.149.15-.064.296.085.145.378.625.811 1.011.558.497 1.029.65 1.174.722.146.072.23.06.315-.037.085-.096.363-.423.46-.568.097-.145.193-.12.325-.072.133.048.841.396.986.469.145.072.241.108.277.169.036.06.036.353-.108.758z"/></svg>
             <span>Get Best Deal</span>

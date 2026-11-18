@@ -133,7 +133,7 @@ function initTonnageCalculator() {
 
       if (viewBtn) {
         viewBtn.onclick = () => {
-          let url = `products.html?category=${encodeURIComponent(filterCategory)}`;
+          let url = `products?category=${encodeURIComponent(filterCategory)}`;
           if (filterTon !== 'all') url += `&tonnage=${encodeURIComponent(filterTon)}`;
           window.location.href = url;
         };
